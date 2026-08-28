@@ -1064,7 +1064,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "status-left",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_SESSION,
-	  .default_str = "[#{session_name}] ",
+	  .default_str = " amux ",
 	  .text = "Contents of the left side of the status line."
 	},
 
@@ -1073,7 +1073,7 @@ const struct options_table_entry options_table[] = {
 	  .scope = OPTIONS_TABLE_SESSION,
 	  .minimum = 0,
 	  .maximum = SHRT_MAX,
-	  .default_num = 10,
+	  .default_num = 16,
 	  .text = "Maximum width of the left side of the status line."
 	},
 
@@ -1090,16 +1090,14 @@ const struct options_table_entry options_table[] = {
 	  .type = OPTIONS_TABLE_CHOICE,
 	  .scope = OPTIONS_TABLE_SESSION,
 	  .choices = options_table_status_position_list,
-	  .default_num = 1,
+	  .default_num = 0,
 	  .text = "Position of the status line."
 	},
 
 	{ .name = "status-right",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_SESSION,
-	  .default_str = "#{?window_bigger,"
-			 "[#{window_offset_x}#,#{window_offset_y}] ,}"
-			 "\"#{=21:pane_title}\" %H:%M %d-%b-%y",
+	  .default_str = "#{session_name} ",
 	  .text = "Contents of the right side of the status line."
 
 	},
@@ -1854,7 +1852,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "window-status-current-format",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_WINDOW,
-	  .default_str = "#I:#W#{?window_flags,#{window_flags}, }",
+	  .default_str = " #W ",
 	  .text = "Format of the current window in the status line."
 	},
 
@@ -1870,7 +1868,7 @@ const struct options_table_entry options_table[] = {
 	{ .name = "window-status-format",
 	  .type = OPTIONS_TABLE_STRING,
 	  .scope = OPTIONS_TABLE_WINDOW,
-	  .default_str = "#I:#W#{?window_flags,#{window_flags}, }",
+	  .default_str = " #W ",
 	  .text = "Format of windows in the status line, except the current "
 		  "window."
 	},
