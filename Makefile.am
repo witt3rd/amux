@@ -279,8 +279,8 @@ install-exec-hook:
 	fi
 	$(mkdir_p) $(DESTDIR)$(mandir)/man1
 	$(INSTALL_DATA) $(srcdir)/tmux.1.@MANFORMAT@ \
-		$(DESTDIR)$(mandir)/man1/tmux.1
+		$(DESTDIR)$(mandir)/man1/amux.1
 
 # And uninstall it.
 uninstall-hook:
-	rm -f $(DESTDIR)$(mandir)/man1/tmux.1
+	rm -f $(DESTDIR)$(mandir)/man1/amux.1
