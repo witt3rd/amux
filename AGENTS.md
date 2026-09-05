@@ -81,6 +81,7 @@ their copyright. Our commits are chrome, ACP, and this charter.
 
 ## Caretaker
 
+Custody is AGENTS.md; no `.agent/` folder, no inhabit, no formal handoff.
 A change earns its place by making the multiplexer more correct or
 the roster more true. New words go in this file only after they have
 earned it.
